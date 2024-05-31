@@ -24,9 +24,7 @@ body {
     padding: 5px;
     text-align: center;
     width: 100%;
-    height: fit-content;
-   
-   
+    height: fit-content;   
 }
 .headerContent p{
     color: black;
@@ -66,8 +64,10 @@ body {
         background-color: #444;
         padding:  30px 0px;
         top: 5px;
-        position: relative;
-        min-height: 5px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 99;
     }
     .logo-container {
         width: 200px; 
@@ -98,8 +98,20 @@ body {
 }
 .ulContent{
     position: absolute;
-    right: 400px;
+    right: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
    
+}
+.photo-svg{
+   width: 50px;
+   position: absolute;
+   right: 2px;
+   display: none;
+
+
 }
 
 .navbar ul li {
@@ -614,10 +626,75 @@ p{
     text-align: center;
     margin-top: auto; 
      }
+
+
+     /*----------------------sidebar----------------------------*/
+     .show{
+       
+        left: 0px !important;
+        
+       
+        
+     }
+     .mobilemenu{
+        position: absolute;
+        top: 60px;
+        left: -400px;
+        width: 300px;
+        background: whitesmoke;
+        list-style: none;
+        border-radius: 20px;
+        border: none;
+        transition: 0.5s all ease-in-out;
+        display: none;
+        z-index: 99;
+      
+     }
+     #myBtn{
+        
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            
+     }
+     #myBtn:hover {
+        background-color: #555;
+      }
+      
+
+     .mobilemenu a{
+       
+        font-size: 25px;
+        color: black;
+        text-decoration: none;
+        
+     }
+     .mobilemenu li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.7rem;
+     }
+     /*---------------------sidebar-------------------------------*/
      @media only screen and (max-width: 700px) {
 
         .header{
             display: none;
+            
+        }
+        .ulContent{
+            display: none;
+        }
+        .photo-svg{
+            display: block;
+            margin-right: 5%;
         }
     
         .headerContent {
@@ -625,11 +702,37 @@ p{
             align-items: center;
             text-align: center;
         }
+        .content-image-div{
+            text-align: center;
+        }
+        .headerdivtow{
+            width: 100%;
+        }
+        .headerdivtow a h1 p{
+            text-align: center;
+
+        }
+        
+        .contentdivtow1{
+            width: 100%;
+            margin-bottom: 20%;
+            
+        }
+        .content-image-div{
+            display: none;
+        }
+        .mobilemenu{
+            display: block;
+            width: 30%;
+            position: fixed;
+        }
+
+
 
         .horizontal-divone{
             display: flex;
             flex-direction: column;
-            background: red;
+
         }
         .content-image-div{
             width: 100%;
@@ -637,6 +740,10 @@ p{
         .horizontal-divtow {
             display: flex;
             flex-direction: column;
+            width: 100%;
+        }
+
+        .cardone{
             width: 100%;
         }
         .horizontal-divthree{
@@ -651,11 +758,19 @@ p{
             display: flex;
             flex-direction: column;
         }
+        .textdivfour{
+            margin-top: 10%;
+        }
         .shippingdivfour{
             display: flex;
             flex-direction: column;
             height: 200vh;
 
+        }
+        .shipping {
+            width: 100%;
+            height: 50%;
+    
         }
         .arrow1{
             display: none;
